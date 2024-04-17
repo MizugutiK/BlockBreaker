@@ -61,7 +61,7 @@ const moveBalls = () => {
         // 画面端と衝突しているかの検証
         checkEdgeCollision(ball);
         // 操作バーと衝突しているかの検証
-        checkBarCollision(ball);
+        checkBarCollision(ball, bar);
         // ブロックと衝突しているかの検証
         checkBlockCollision(ball);
         // 画面下に落ちているかの検証
@@ -99,15 +99,17 @@ const resetAndPlayWallHitSound = () => {
 };
 
 // バーとの衝突のチェック
-const checkBarCollision = (ball) => {
+const checkBarCollision = (ball, bar) => {
+    const barLeftX = bar.x - barHalfWidth; // バーの左端のX座標
+    const barRightX = bar.x + barHalfWidth; // バーの右端のX座標
     if (
-        ball.rightX > bar.leftX &&
-        ball.leftX < bar.rightX &&
+       ball.rightX > barLeftX &&
+        ball.leftX < barRightX &&
         ball.bottomY > bar.y &&
-        ball.topY < bar.bottomY
+        ball.topY < bar.y + barHeight
     ) {
         // bar.jsに処理が書いてある
-        collideBar(ball);
+        collideBar(ball,bar);
     }
 };
 
