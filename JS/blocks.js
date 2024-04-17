@@ -33,6 +33,19 @@ const blockDictionary = {
             createBall(ball.x, ball.y, degree);
         },
     },
+    'barWidthChange': {
+        borderColor: 'green',
+        fillColor: 'lightgreen',
+        hitPoints: 1,
+        effect () {
+            if (barWidth === 100) {
+                barWidth = 200;
+            } else {
+                barWidth = 100;
+            }
+        },
+    },
+    
 };
 
 
@@ -46,9 +59,14 @@ const createRandomBlock = (rowIndex, columnIndex) => {
     // 確率に応じてブロックの種類を選択
     if (randomNumber < 0.6) { // 60%の確率で通常ブロック
         blockName = 'normal';
-    } else if (randomNumber < 0.9) { // 20%の確率でhardブロック
+    }
+     else if (randomNumber < 0.8) { 
         blockName = 'hard';
-    } else { // 20%の確率でdoubleブロック
+    }
+    else if (randomNumber < 0.9) { 
+        blockName = 'barWidthChange';
+
+    } else { 
         blockName = 'double';
     }
     // 選択したブロックを生成
@@ -130,8 +148,10 @@ const collideBlock = (ball, block) => {
     if (block.hitPoints === 0) {
         removeBlock(block);
     }
+
     // ブロックがどの種類かによって、異なる効果音を再生
     const hitSound1 = document.getElementById('hitSound1');
+    const hitSound2 = document.getElementById('hitSound2');
     const hitSound3 = document.getElementById('hitSound3');
     
         // ブロックのボーダーカラーで判断している
@@ -145,6 +165,10 @@ const collideBlock = (ball, block) => {
     else if (block.borderColor === 'chocolate') {
         hitSound3.currentTime = 0; // 再生位置をリセット
         hitSound3.play(); // SE3再生
+    }
+    else if (block.borderColor === 'green') {
+        hitSound2.currentTime = 0; // 再生位置をリセット
+        hitSound2.play(); // SE3再生
     }
 }; 
 

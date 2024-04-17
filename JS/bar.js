@@ -4,7 +4,7 @@ let bar;
 const initBar = () => {
     // バーのオブジェクトを初期化
     bar = {
-        x: canvasWidth / 2, // バーのx座標
+        x: barHalfWidth, // バーのx座標
         y: barPosition, // バーのy座標
         bottomY: barPosition + barHeight, // バーの底辺のy座標
         // バーの左端のx座標
