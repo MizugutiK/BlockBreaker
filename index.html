@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <title>ブロック崩し</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    
+    <script defer src="./JS/settings.js"></script>
+     <script defer src="./JS/balls.js"></script>
+     <script defer src="./JS/blocks.js"></script> 
+    <script defer src="./JS/bar.js"></script>
+    <script defer src="./JS/main.js"></script>
+
+    <!-- SE -->
+    <audio id="hitSound1" src="./SE/Hit1.mp3"></audio>
+    <audio id="hitSound3" src="./SE/Hit3.mp3"></audio>
+
+    <audio id="barHitSound" src="./SE/Bar.mp3"></audio>
+
+    <audio id="wallHitSound" src="./SE/Wall.mp3"></audio>
+    <audio id="GameClear" src="./SE/GameC.mp3"></audio>
+    <audio id="GameOver" src="./SE/GameO.mp3"></audio>
+</head>
+
+<body>
+    <div id="game-screen">
+
+        <canvas id="blocks-canvas"></canvas>
+        <canvas id="bar-balls-canvas"></canvas>
+ 
+
+        <!-- メッセージを表示させる -->
+        <div id="message-container">
+            <div id="message" class="label"></div>
+        </div>
+
+        <!-- ボールやブロックの数を表示させる -->
+        <div id="counter" class="label">
+            <div>ブロックの数：<span id="blocks-count"></span></div>
+            <div>残りのボール数: <span id="balls-count"></span></div>
+        </div>
+        
+
+    </div>
+    <div id="Credit">
+
+        <p>効果音提供  効果音ラボ(https://soundeffect-lab.info/)</p>
+
+    </div>
+</body>
+
+</html>
