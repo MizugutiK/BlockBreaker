@@ -92,5 +92,3 @@ const barBallsCtx = barBallsCanvas.getContext("2d");
 // メッセージラベルとブロック数ラベル
 const messageLabel = document.getElementById('message');
 const blocksCountLabel = document.getElementById('blocks-count');
-
-
