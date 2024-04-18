@@ -4,7 +4,7 @@ body {
     display: flex; /* フレックスコンテナとして設定 */
     justify-content: center; /* 横方向の中央揃え */
     align-items: flex-start; /* 縦方向の上寄せに設定 */
-    height: 100vh; /* ビューポートの高さいっぱいに表示 */
+    min-height: 100vh; /* ビューポートの高さいっぱいに表示 */
     
 }
 
@@ -101,10 +101,17 @@ canvas {
     text-align: center; /* テキストを中央揃えにする */
 }
 
+#Readme{
+    position: relative; /* 相対配置に変更 */
+    text-align: left;
+    width: 100%;
+    
+}
+
 #Credit{
     /* 要素の位置を絶対位置に設定 */
     position: absolute; 
-    /* 下部からの距離を調整 */
-    bottom: 20px; 
+    width: 100%;
+    margin-top: 20px; /* Readmeからの間隔を設定 */
     text-align: center;
 }
