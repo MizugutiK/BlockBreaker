@@ -57,13 +57,13 @@ const createRandomBlock = (rowIndex, columnIndex) => {
     if (randomNumber < 0.6) { // 60%の確率で通常ブロック
         blockName = 'normal';
     }
-     else if (randomNumber < 0.8) { 
+     else if (randomNumber < 0.8) { // 20%の確率でハードブロック
         blockName = 'hard';
     }
-    else if (randomNumber < 0.9) { 
+    else if (randomNumber < 0.9) { // 10%の確率でバー幅変更ブロック
         blockName = 'barWidthChange';
 
-    } else { 
+    } else { // 10%の確率でバー幅変更ブロック
         blockName = 'double';
     }
     // 選択したブロックを生成
