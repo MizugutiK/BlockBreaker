@@ -38,11 +38,8 @@ const blockDictionary = {
         fillColor: 'lightgreen',
         hitPoints: 1,
         effect () {
-            if (barWidth === 100) {
-                barWidth = 200;
-            } else {
-                barWidth = 100;
-            }
+             // バーの幅が100の場合は200に、それ以外の場合は100に変更
+             setBarWidth(barWidth === 100 ? 200 : 100);
         },
     },
     
